@@ -1,4 +1,4 @@
-extends Sprite2D
+extends ColorRect
 @export var game_width:float = 1.0
 @export var game_higth:float = 1.0
 var int_width :float
