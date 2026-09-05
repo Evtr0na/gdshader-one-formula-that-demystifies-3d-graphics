@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dtqgcrb8dv3eq"]
+
+[ext_resource type="Shader" uid="uid://bcbv0a7ag6tbk" path="res://gdshader/a_shader.gdshader" id="1_2ipj3"]
+[ext_resource type="Texture2D" uid="uid://b54dvcb5t0874" path="res://icon.svg" id="2_bagxk"]
+[ext_resource type="Script" uid="uid://bn4quysukrk4d" path="res://level/_1_.gd" id="3_yb2xq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32d3c"]
+shader = ExtResource("1_2ipj3")
+shader_parameter/points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/radius = 0.015
+shader_parameter/point_count = 0
+shader_parameter/color = Color(0.90359825, 0.90359825, 0.9035982, 1)
+shader_parameter/color_1 = Color(0, 0, 0, 1)
+shader_parameter/smooth_values = 0.005
+
+[node name="Control" type="Control" unique_id=887450658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 148.0
+offset_top = -13.0
+offset_right = 148.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1222187715]
+material = SubResource("ShaderMaterial_32d3c")
+position = Vector2(711, 541)
+scale = Vector2(8.0615225, 8.0615225)
+texture = ExtResource("2_bagxk")
+script = ExtResource("3_yb2xq")
+p_1 = 0.83
+p_3 = -0.4
+p_4 = -0.075
