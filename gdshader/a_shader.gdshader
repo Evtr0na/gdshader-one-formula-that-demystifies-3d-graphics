@@ -12,9 +12,16 @@ uniform float game_higth;
 void fragment() {
     float circle = 0.0 ; 
     float mask = 0.0;
+    float aspect = game_width/game_higth;
     for (int i = 0;i < point_count;i++){
+        // vec2 delta = vec2(UV.x*game_width,UV.y*game_higth) - points[i]; 
+        //抵消比例问题        
+        vec2 delta = UV - points[i]; 
+        delta = vec2(delta.x*aspect,delta.y);
         circle = 0.0;
-        float dist = distance(vec2(UV.x*game_width,UV.y*game_higth), points[i]);
+        float dist = length(delta);
+        
+        // float dist = distance(vec2(UV.x*game_width,UV.y*game_higth), points[i]);
         //smoothstep(a, b, x) x如果小于a则输出1.0，大于b则0.0，中间就平滑过渡
         circle = 1.0 - smoothstep(radius-smooth_values, radius+smooth_values, dist);
         mask = max(mask,circle);
