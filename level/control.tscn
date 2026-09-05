@@ -12,6 +12,8 @@ shader_parameter/point_count = 0
 shader_parameter/color = Color(0.90359825, 0.90359825, 0.9035982, 1)
 shader_parameter/color_1 = Color(0, 0, 0, 1)
 shader_parameter/smooth_values = 0.005
+shader_parameter/game_width = 0.0
+shader_parameter/game_higth = 0.0
 
 [node name="Control" type="Control" unique_id=887450658]
 layout_mode = 3
@@ -31,6 +33,7 @@ position = Vector2(711, 541)
 scale = Vector2(8.0615225, 8.0615225)
 texture = ExtResource("2_bagxk")
 script = ExtResource("3_yb2xq")
+radius = 2.54
 p_1 = 0.83
 p_3 = -0.4
 p_4 = -0.075
