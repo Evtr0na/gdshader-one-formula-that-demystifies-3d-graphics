@@ -13,6 +13,7 @@ shader_parameter/color_1 = Color(0, 0, 0, 1)
 shader_parameter/smooth_values = 0.002
 shader_parameter/game_width = 0.0
 shader_parameter/game_higth = 0.0
+shader_parameter/line_width = 5.0
 
 [node name="Control" type="Control" unique_id=887450658]
 layout_mode = 3
@@ -33,8 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_yb2xq")
-game_width = null
-game_higth = null
-offest = null
-radius = 0.008
-smooth_values = 0.004
+radius = 5.968
+smooth_values = 2.0
+line_width = 1.2
+distance_ = 100.0
