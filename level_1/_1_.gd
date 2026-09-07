@@ -1,21 +1,13 @@
 extends ColorRect
+
+# -----------------------------------------------------------------
+# -- base_state
+# -----------------------------------------------------------------
 @export var focal_length:float = 500.0
-@export var game_width:float = 1.0
-@export var game_higth:float = 1.0
-@export var offest:float = 1.0
 @export var radius = 0.0
 @export var smooth_values := 0.005
 @export var line_width:float =  5.0
-
-@export var distance_:float = 1.0
-var time_:float = 0.0
-
 @onready var material_ := self.material as ShaderMaterial
-@export var rotation_:Vector3 = Vector3(0.0,0.0,0.0)
-var cum_movement:float = 0.0
-
-var center_ := Vector3(0.0,0.0,600)
-
 var point:PackedVector3Array = [
 
 	# Vector3(+0.0,+0.0,+1.0),
@@ -23,7 +15,7 @@ var point:PackedVector3Array = [
 	Vector3(-200.0,+200.0,+400.0),
 	Vector3(-200.0,-200.0,+400.0),
 	Vector3(+200.0,-200.0,+400.0),
-	
+
 
 	Vector3(+200.0,+200.0,+800.0),
 	Vector3(-200.0,+200.0,+800.0),
@@ -31,6 +23,17 @@ var point:PackedVector3Array = [
 	Vector3(+200.0,-200.0,+800.0),
 
 ]
+
+# -----------------------------------------------------------------
+# -- state
+# -----------------------------------------------------------------
+var time_:float = 0.0
+@export var distance_:float = 1.0
+@export var rotation_:Vector3 = Vector3(0.0,0.0,0.0)
+var cum_movement:float = 0.0
+var center_ := Vector3(0.0,0.0,600)
+
+
 
 
 func _physics_process(_delta: float) -> void:

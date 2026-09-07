@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d0ae54uxbgyxs"]
+
+[ext_resource type="Shader" uid="uid://c4ht3dl60rnhg" path="res://l_2/L_2.gdshader" id="1_slr2h"]
+[ext_resource type="Script" uid="uid://bkgousacdja44" path="res://l_2/L_2.gd" id="2_ywr8c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkt7w"]
+shader = ExtResource("1_slr2h")
+shader_parameter/radius = 0.0
+shader_parameter/smooth_values = 0.002
+shader_parameter/game_width = 0.0
+shader_parameter/game_higth = 0.0
+shader_parameter/line_width = 5.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color_1 = Color(0, 0, 0, 1)
+shader_parameter/point_count = 0
+shader_parameter/points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Control" type="Control" unique_id=887450658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=829173564]
+material = SubResource("ShaderMaterial_dkt7w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ywr8c")
+radius = 8.475
+smooth_values = 2.3449999999999998
