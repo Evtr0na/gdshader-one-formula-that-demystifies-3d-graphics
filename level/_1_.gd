@@ -15,6 +15,7 @@ var time_:float = 0.0
 var cum_movement:float = 0.0
 
 var center_ := Vector3(0.0,0.0,600)
+
 var point:PackedVector3Array = [
 
 	# Vector3(+0.0,+0.0,+1.0),
@@ -23,9 +24,6 @@ var point:PackedVector3Array = [
 	Vector3(-200.0,-200.0,+400.0),
 	Vector3(+200.0,-200.0,+400.0),
 	
-
-	
-
 
 	Vector3(+200.0,+200.0,+800.0),
 	Vector3(-200.0,+200.0,+800.0),
@@ -51,10 +49,11 @@ func _physics_process(_delta: float) -> void:
 
 # 批处理
 func frame(p_:PackedVector3Array,delta:float,dist:float,_rotation_:Vector3)->Dictionary:
+	var array_:PackedVector2Array = [] 
 	rotation_.y+= 0.3*delta
 	rotation_.x+= 0.3*delta
-	var array_:PackedVector2Array = [] 
 	cum_movement+=dist*delta
+
 	for i in range(p_.size()):
 
 		var a := rotate( center_, p_[i] , _rotation_ )
@@ -65,11 +64,13 @@ func frame(p_:PackedVector3Array,delta:float,dist:float,_rotation_:Vector3)->Dic
 
 	return { "array_": array_}
 	
+#project to screen
 func project(p_:Vector3)->Vector2:
 	var x_ = p_.x/p_.z*focal_length
 	var y_ = p_.y/p_.z*focal_length
 	return Vector2(x_,y_)
 
+#switsch coordinate systems
 func screen(p:Vector2)->Vector2:
 	var x_ = p.x+0.5*size.x
 	var y_ = -p.y+0.5*size.y
@@ -80,7 +81,7 @@ func screen(p:Vector2)->Vector2:
 func move_away(p_: Vector3) -> Vector3:
 	return Vector3(p_.x, p_.y, p_.z + cum_movement)
 
-# 仅旋转y轴
+#Euler rotation
 func rotate(center:Vector3,p_:Vector3,_rotation_: Vector3) -> Vector3:
 
 	var cx := cos(_rotation_.x)
@@ -120,7 +121,7 @@ func rotate(center:Vector3,p_:Vector3,_rotation_: Vector3) -> Vector3:
 
 	return v_
 
-
+#计时器
 func time(delta)->void:
 	time_ += delta
 	if time_ >= 3.0:

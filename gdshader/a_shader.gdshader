@@ -10,6 +10,8 @@ uniform float game_width;
 uniform float game_higth;
 uniform float line_width;
 
+// Returns the perpendicular distance from an arbitrary point
+// to a line defined by two points, used to control line thickness
 float segment_distance (vec2 a,vec2 b ,vec2 p){
     vec2 ap = p - a;
     vec2 ab = b - a;
@@ -40,6 +42,7 @@ float draw_point(vec2 p_,float m){
     
     float circle = 0.0 ; 
     for (int i = 0;i < point_count;i++){
+        
         //抵消比例问题        
         vec2 delta = vec2(p_) - points[i]; 
         circle = 0.0;
@@ -54,9 +57,14 @@ float draw_point(vec2 p_,float m){
 }
 
 void fragment() {
+    // UV align to screen space, e.g. top‑left corner stays vec2(0.0, 0.0),
+    // vec2(0.0,1.0) -> vec2(0.0,1920.0),
+    // vec2(1.0,0.0) -> vec2(1920.0,0.0),
+    // vec2(1.0,1.0) -> vec2(1920.0,1080.0)
     vec2 pixel = vec2(UV.x*game_width,UV.y*game_higth);
     float mask = 0.0;
     
+    //draw lines
     mask = max(mask,draw_line(points[0], points[1], pixel));    
     mask = max(mask,draw_line(points[1], points[2], pixel));    
     mask = max(mask,draw_line(points[2], points[3], pixel));    
@@ -68,12 +76,14 @@ void fragment() {
     mask = max(mask,draw_line(points[7], points[4], pixel));    
     
     
+    //draw points
     mask = max(mask,draw_line(points[4], points[0], pixel));    
     mask = max(mask,draw_line(points[5], points[1], pixel));    
     mask = max(mask,draw_line(points[6], points[2], pixel));    
     mask = max(mask,draw_line(points[7], points[3], pixel));    
     
     mask  = max(mask, draw_point(pixel,mask) );
+    
     COLOR = mix(color_1,color,mask);
     
 }
